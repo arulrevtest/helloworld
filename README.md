@@ -16,7 +16,24 @@
 ## Testing application
 
 ### Create table in RDS mysql instance with mysql client with below ddl command
-    ''' CREATE TABLE users ( id smallint unsigned not null auto_increment, user_name varchar(20), date_of_birth varchar(20), constraint pk_example primary key (id) ); '''
+    ``` CREATE TABLE users ( id smallint unsigned not null auto_increment, user_name varchar(20), date_of_birth varchar(20), constraint pk_example primary key (id) ); ```
+
+### Sample curl commands
+
+```
+curl -X PUT \
+  http://34.243.154.122:8090/hello/Arul \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "dateOfBirth": "2007-06-12"
+}'
+
+curl -X GET \
+  http://34.243.154.122:8090/hello/Arul \
+  -H 'Cache-Control: no-cache'
+
+```
 
 
 
