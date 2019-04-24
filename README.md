@@ -21,20 +21,67 @@ CREATE TABLE users ( id smallint unsigned not null auto_increment, user_name var
 
 ```
 
-### Sample curl commands
+### Sample Test Scripts
 
 ```
+Command:
 curl -X PUT \
-  http://34.243.154.122:8090/hello/Arul \
+  http://34.244.214.224:8090/hello/Arul \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{
     "dateOfBirth": "2007-06-12"
 }'
+Expected result:
+No Response message. Row should be created in users table for Arul
 
+Command:
 curl -X GET \
-  http://34.243.154.122:8090/hello/Arul \
+  http://34.244.214.224:8090/hello/Arul \
   -H 'Cache-Control: no-cache'
+ Expected Result:
+ Hello Arul Your birthday is in N Day(s)
+
+Command:
+curl -X PUT \
+  http://34.244.214.224:8090/hello/Arulk \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "dateOfBirth": "2007-04-24"
+}'
+Expected result:
+No Response message. Row should be created in users table for Arulk
+
+Command:
+curl -X GET \
+  http://34.244.214.224:8090/hello/Arulk \
+  -H 'Cache-Control: no-cache'
+ Expected Result:
+ Hello Arulk Happy Birthday!
+
+Command:
+curl -X PUT \
+  http://34.244.214.224:8090/hello/Arulk12 \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "dateOfBirth": "2007-04-24"
+}'
+Expected result:
+Arulk12 must contains only letters.
+
+Command:
+curl -X PUT \
+  http://34.244.214.224:8090/hello/Arulku \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "dateOfBirth": "2019-04-30"
+}'
+Expected result:
+Date 2019-04-30 must be a date before the today date
+
 
 ```
 

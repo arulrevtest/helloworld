@@ -86,8 +86,8 @@ public class UserController {
 		LocalDate dobNextYear = LocalDate.of(now.getYear()+1, dob.getMonth(), dob.getDayOfMonth());
 		long daysBetween = 0;
 		
-		if (dob.isEqual(now)) {
-			return ("Hello "+ user.getUserName() + "Happy Birthday!");
+		if (dobCurrentYear.isEqual(now)) {
+			return ("Hello "+ user.getUserName() + " Happy Birthday!");
 		} else {
 			if (dobCurrentYear.isBefore(now)) {				
 				daysBetween = ChronoUnit.DAYS.between(now, dobNextYear);

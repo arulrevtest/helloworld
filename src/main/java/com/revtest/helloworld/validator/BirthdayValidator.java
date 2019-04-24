@@ -19,7 +19,7 @@ public class BirthdayValidator{
             Date birthdate = format.parse(dateOfBirth);
             Date today = new Date();
             if (birthdate.compareTo(today)>=0) {
-            	errors.reject("Date " + dateOfBirth + "must be a date before the today date");
+            	errors.reject("Date " + dateOfBirth + " must be a date before the today date");
             }
         } catch (ParseException e) {
         	errors.reject("Date " + dateOfBirth + " is not valid according to " +
