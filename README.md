@@ -11,13 +11,6 @@
 ## How to run
     Configure src/main/resources/application.properties with appropriate DB details
     Create pipeline job in jenkins with this repository as SCM
-    In Jenkinsfile replace "test" with your job name in the below script
-    ```
-        docker {
-          image 'arulkumar1967/build-arul-container:latest'
-          args '-u root:sudo -v $HOME/workspace/test:/test'
-        }
-    ```
     Configure required crdentials for AWS account and Github repo
     Execute the build job
 
