@@ -23,7 +23,7 @@ public class Rdsconnect {
 
 	    try {
 	        connection = DriverManager.
-	                getConnection("jdbc:mysql://revtest.chhyet6jkerf.eu-west-1.rds.amazonaws.com:3306/userdb", "root", "Changem3");
+	                getConnection("jdbc:mysql://revtest.chhyet6jkerf.eu-west-1.rds.amazonaws.com:3306/pipefish", "root", "Changem3");
 	    } catch (SQLException e) {
 	        System.out.println("Connection Failed!:\n" + e.getMessage());
 	    }
