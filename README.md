@@ -7,6 +7,12 @@
     Jenkins, Ansible, Packer, Terraform, AWS infrastructure with VPC and subnets, AWS RDS mysql database
     The above prerequsite tools are created with manual/terraform code
     Custom docker image with jdk, maven, terraform is created for jenkins agent
+    
+    
+## Architecture
+
+![](RevTestPipeline.png)
+
 
 ## How to run
     Configure src/main/resources/application.properties with appropriate DB details
